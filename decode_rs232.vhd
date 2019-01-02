@@ -70,15 +70,15 @@ architecture dcd of decode_serial_data is
                         end if;
 
                     when s_readByte1 =>
-						if (int_Rx_DV = '0') then --legge solo quando il dataReady tornato a 0, in teoria al successivo colpo di clock questo dovrebbe essere sempre vero
+                        if (int_Rx_DV = '0') then --legge solo quando il dataReady tornato a 0, in teoria al successivo colpo di clock questo dovrebbe essere sempre vero
                             int_Byte1 <= i_RX_Byte;
                             int_Byte1_read <= '1';
                             int_Byte2_read <= '0';
                             r_SM_Main <= s_readByte2;
                         else
-							r_SM_Main <= s_readByte1;
-						end if;
-						
+                            r_SM_Main <= s_readByte1;
+                        end if;
+                        
                     when s_readByte2 =>
                         if (int_Rx_DV = '1') then
                             int_Byte2 <= i_RX_Byte;

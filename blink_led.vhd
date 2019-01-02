@@ -3,19 +3,19 @@ use IEEE.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity blink_led is
-	generic ( 
+    generic ( 
         g_period_blink : integer := 670; --numero colpi di clock in un microsecondo: 
         g_period_blink_fast : integer := 3;
         g_time_blink_fast : integer := 20
-	);
-	port (
-	    i_reset_n : in std_logic := '1';
+    );
+    port (
+        i_reset_n : in std_logic := '1';
         i_Clk : in std_logic;
         i_data_ready : in std_logic;
         o_led_control : out std_logic;
         o_count : out integer range 670 downto 0;
         o_count_DR : out integer range 67 downto 0
-	);
+    );
 end entity blink_led;
 
 architecture arch_blink of blink_led is

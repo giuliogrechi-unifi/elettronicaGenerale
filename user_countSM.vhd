@@ -5,29 +5,29 @@ use IEEE.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity user_countSM is
-	generic ( 
+    generic ( 
         g_count_max_2 : integer := 4095
-	    --g_count_max_2 : integer := 100
-	);
-	port (
+        --g_count_max_2 : integer := 100
+    );
+    port (
         i_count_max_1 : in integer range 4095 downto 0 := 66; --66 per 1MHz
-	    i_reset_n_sinc : in std_logic := '1';
-	    i_Clk : in std_logic;
-	    i_tri : in std_logic_vector (1 downto 0) :="11";
+        i_reset_n_sinc : in std_logic := '1';
+        i_Clk : in std_logic;
+        i_tri : in std_logic_vector (1 downto 0) :="11";
         i_const_value : in integer range 4095 downto 0; --12 bit per l'eventuale valore costante
-	    o_wr : out std_logic;
+        o_wr : out std_logic;
         o_falling : out std_logic;
-	    count_1 : out std_logic_vector (6 downto 0); --fino a 128
-	    count_2 : out std_logic_vector (11 downto 0) --fino a 4096
-	);
+        count_1 : out std_logic_vector (6 downto 0); --fino a 128
+        count_2 : out std_logic_vector (11 downto 0) --fino a 4096
+    );
 end entity user_countSM;
 
 architecture archSM of user_countSM is
     signal int_count_1: integer range 4095 downto 0 := 0;
-	signal int_count_2: integer range 4095 downto 0 := 0;
+    signal int_count_2: integer range 4095 downto 0 := 0;
     signal int_count_max_1 : integer range 4095 downto 0;
     signal int_const_value : integer range 4095 downto 0; --12 bit per l'eventuale valore costante
-	signal int_wr: std_logic;
+    signal int_wr: std_logic;
     signal int_falling : std_logic;
     signal int_reset_n_sinc : std_logic;
     --signal int_value : integer range 4095 downto 0;
