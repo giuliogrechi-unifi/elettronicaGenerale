@@ -2,7 +2,7 @@
 -- Esempio: 10 MHz Clock, 115200 baud
 -- (10000000)/(115200) = 87
 --66MHz clock, 57600 baudrate
---  66000000/57600 = 1146
+--  66600000/57600 = 1156
 
 library ieee;
 use ieee.std_logic_1164.ALL;
