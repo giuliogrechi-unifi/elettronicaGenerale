@@ -8,7 +8,7 @@ entity project is
         --un reset fisico
         i_Clk : in std_logic;
         i_RX_Serial : in std_logic;
-        i_reset : in std_logic;
+        i_reset_n : in std_logic;
         --gli output sono i 12 bit da inviare 
         --al DAC ed i 3 bit da inviare al
         --binary DAC. eventualmente da aggiungere
