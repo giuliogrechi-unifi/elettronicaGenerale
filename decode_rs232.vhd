@@ -43,7 +43,7 @@ architecture dcd of decode_serial_data is
             end if;
         end process p_sample;
 
-        state_machine : process(i_Clk)
+        state_machine : process(i_Clk,i_reset_n)
         begin
             if (i_reset_n = '0') then
                 int_D_ready <= '0';
