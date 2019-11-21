@@ -25,7 +25,7 @@ plt.style.use(['science'])
 fig_size = 18/2.54, 7/2.54 #dnl inl alle varie frequenze
 fig_size2 = 18/2.54, 14/2.54 #andamenti dnl inl
 fig_size3 = 18/2.54, 7/2.54 #ricostruzione onde
-directory = '/home/giulio/Universita/esamiCompletati/Elettronica-ok30L/arduino/campionamento/misureOK_test'
+directory = '.'
 clock_period = (1/66.6)*1E-6 #in secondi
 clock_period_err = (1E-4)*clock_period #100 ppm frequency stability
 clock_period_arduino = (1/16.0)*1E-6 #in secondi
